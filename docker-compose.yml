@@ -13,6 +13,7 @@ services:
       - mysql-todoapp-compose:/var/lib/mysql
 
   todoapp:
+    build: .
     image:
       nachomillangarcia/todoapp
     ports:
