@@ -8,3 +8,5 @@
 
 # Docker run todoapp
 `docker run --name todoapp -d -p 9000:8080 -e DB_USERNAME=todoapp -e DB_PASSWORD=pass -e DB_NAME=todoapp --link mysql -e DB_HOSTNAME=mysql USUARIO/IMAGEN`
+
+Credenciales: in28minutes/dummy
