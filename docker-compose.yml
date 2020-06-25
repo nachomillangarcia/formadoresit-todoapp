@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: todoapp
+      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: todoapp
+    volumes:
+      - mysql-todoapp-compose:/var/lib/mysql
+
+  todoapp:
+    image:
+      nachomillangarcia/todoapp
+    ports:
+      - "9000:8080"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOSTNAME: mysql
+      DB_NAME: todoapp
+      DB_USERNAME: todoapp
+      DB_PASSWORD: pass
+
+volumes:
+  mysql-todoapp-compose:
